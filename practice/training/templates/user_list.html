@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User list!
+{% endblock %}
+{% block content %}
+    <div style="max-width: 400px; margin: 2rem auto">
+        <button class="btn btn-warning">
+        <a href="{% url 'add_user' %}">Add user</a>
+        </button>
+    {% for user in users %}
+        <h2>{{ user.first_name }}, {{ user.last_name }}</h2>
+        <h3>{{ user.age }}, {{ user.email }}</h3>
+        <h4>{{ user.phone_number }}</h4>
+    {% endfor %}
+    </div>
+{% endblock %}

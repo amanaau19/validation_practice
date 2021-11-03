@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 2rem auto">
+    <button class="btn btn-warning">
+    <a href="{% url 'user_list' %}">Users</a>
+    </button>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn-success" style="margin-top: 1rem">
+            Save!
+        </button>
+    </form>
+</div>
+{% endblock %}
